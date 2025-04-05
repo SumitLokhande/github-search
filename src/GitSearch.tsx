@@ -75,7 +75,7 @@ const GitSearch = () => {
                                         
                                     </div> */}
 
-                                    <div className="grid grid-cols-12 gap-2 p-4">
+                                    <div className="grid grid-cols-12 gap-2 p-2 md:p-0">
                                         <div className="col-span-12 md:col-span-6">
                                             <div className="bg-white p-8 md:p-2 rounded-md text-black text-center md:text-start max-w-screen-md w-full overflow-x">
                                                 <p className="break-all">
@@ -91,7 +91,7 @@ const GitSearch = () => {
                                             </div>
 
                                         </div>
-                                        <div className="col-span-12 md:col-span-6"><div className="flex justify-center md:justify-end ml-4">
+                                        <div className="col-span-12 md:col-span-6 my-2"><div className="flex justify-center md:justify-end ml-4">
                                             <img className="w-24 border-3 border-gray-400 rounded-full p-1" src={repo.owner.avatar_url} alt="avatar" />
                                         </div>
                                         </div>
