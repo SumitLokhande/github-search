@@ -67,28 +67,39 @@ const GitSearch = () => {
                         <div className="space-y-4">
                             {repos.map((repo) => (
                                 <div key={repo.id} className="rounded-lg p-4 shadow-md hover:shadow-xl transition-shadow duration-300 bg-white">
-                                    <div className="flex flex-row my-2">
-                                        <div className="flex-1">
-                                            <div>
-                                                <a
-                                                    href={repo.html_url}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="text-xl text-blue-600 font-semibold hover:underline"
-                                                >
-                                                    {repo.full_name}
-                                                </a>
+                                    {/* <div className="grid grid-cols-4 my-2">
+                                        <div className="">
+                                           
+
+                                        </div>
+                                        
+                                    </div> */}
+
+                                    <div className="grid grid-cols-12 gap-2 p-4">
+                                        <div className="col-span-12 md:col-span-6">
+                                            <div className="bg-white p-8 md:p-2 rounded-md text-black text-center md:text-start max-w-screen-md w-full overflow-x">
+                                                <p className="break-all">
+                                                    <a
+                                                        href={repo.html_url}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="text-xl text-blue-600 font-semibold hover:underline overflow-hidden text-ellipsis whitespace-nowrap"
+                                                    >
+                                                        {repo.full_name}
+                                                    </a>
+                                                </p>
                                             </div>
 
                                         </div>
-                                        <div className="flex justify-end ml-4">
-                                            <img className="w-18 border-3 border-gray-400 rounded-full p-1" src={repo.owner.avatar_url} alt="avatar" />
+                                        <div className="col-span-12 md:col-span-6"><div className="flex justify-center md:justify-end ml-4">
+                                            <img className="w-24 border-3 border-gray-400 rounded-full p-1" src={repo.owner.avatar_url} alt="avatar" />
+                                        </div>
                                         </div>
                                     </div>
 
                                     <div className="w-3/4">
                                         <p className="text-sm text-gray-600 my-2"><span className="font-bold">Topics:</span> {repo.topics.length > 0 ? repo.topics.join(", ") : "No topics"}</p>
-                                        <p className="text-sm text-gray-600 my-2"><span className="font-bold">Description:</span> {repo.description ? repo.description : 'No Description'}</p>
+                                        <p className="text-sm text-gray-600 my-2"><span className="font-bold text-wrap">Description:</span> {repo.description ? repo.description : 'No Description'}</p>
                                     </div>
                                     <div className="flex flex-row gap-4 mt-2">
                                         <p className="text-sm text-gray-600"><span className="font-bold">Created at:</span> {new Date(repo.created_at).toLocaleDateString()}</p>
